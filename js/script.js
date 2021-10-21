@@ -151,7 +151,7 @@ let onScroll = 0;
 let activScrol = true;
 
 const nextSlaid = () => {
-    onScroll = 80;
+    onScroll = 70;
     if (activScrol === true) {
         for (let i = 0; i < containerSecton2.children.length; i++) {
             cardWan = containerSecton2.children;
@@ -191,7 +191,7 @@ const nextSlaid = () => {
 if (activScrol === true) {
     window.addEventListener('scroll', function () {
         onScroll += 1;
-        if (onScroll === 80) {
+        if (onScroll === 70) {
             for (let i = 0; i < containerSecton2.children.length; i++) {
                 cardWan = containerSecton2.children;
                 cardWan[0].classList.remove('display');
@@ -243,11 +243,11 @@ window.addEventListener('scroll', function () {
     var x = window.scrollX;
     var y = window.scrollY;
     console.log(window.scrollY)
-    if (y >= 1655) {
+    if (y >= 1695) {
         $('body').addClass('stop-scrolling');
         $('.block_hiden').addClass('scrol_up');
     }
-    if (y <= 1655) {
+    if (y <= 1695) {
         $('body').removeClass('stop-scrolling');
         $('.block_hiden').removeClass('scrol_up')
     }
