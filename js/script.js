@@ -243,11 +243,11 @@ window.addEventListener('scroll', function () {
     var x = window.scrollX;
     var y = window.scrollY;
     console.log(window.scrollY)
-    if (y >= 1605) {
+    if (y >= 1695) {
         $('body').addClass('stop-scrolling');
         $('.block_hiden').addClass('scrol_up');
     }
-    if (y <= 1605) {
+    if (y <= 1695) {
         $('body').removeClass('stop-scrolling');
         $('.block_hiden').removeClass('scrol_up')
     }
