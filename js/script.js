@@ -239,74 +239,123 @@ function disableScrolling() {
 function enableScrolling() {
     window.onscroll = function () { };
 }
+// window.addEventListener('scroll', function () {
+//     var x = window.scrollX;
+//     var y = window.scrollY;
+//     console.log(window.scrollY)
+//     if (y >= 1695) {
+//         $('body').addClass('stop-scrolling');
+//         $('.block_hiden').addClass('scrol_up');
+//     }
+//     if (y <= 1695) {
+//         $('body').removeClass('stop-scrolling');
+//         $('.block_hiden').removeClass('scrol_up')
+//     }
+// });
+
+
+
+
+// const showSec4 = document.querySelector('.show_sec4');
+// const arrowSection4 = document.querySelector('.aroow_section4');
+// const containerSection4 = document.querySelector('.container_section4');
+
+// const goActivSec4 = () => {
+//     let textWaan = "Did you know that YOU have the power to end this downward spiral?";
+//     containerSection4.classList.add('go_animation_bacg');
+
+//     showSec4.classList.add('go_animation_text');
+//     showSec4.innerHTML = textWaan;
+
+// }
+
+// const goActivSec4Twoo = () => {
+//     let textWaan = "There is no time to waste.";
+
+//     showSec4.classList.add('go_animation_text');
+//     showSec4.innerHTML = textWaan;
+
+// }
+// const goActivSec4Three = () => {
+//     let textWaan = "By supporting Farnico as a customer, follower, donor or volunteer, you become part of our GLOBAL REVOLUTION";
+
+//     showSec4.classList.add('go_animation_text');
+//     showSec4.innerHTML = textWaan;
+
+// }
+// const goActivSec4Faif = () => {
+//     let textWaan = "Support our MISSION";
+
+//     showSec4.classList.add('go_animation_text');
+//     showSec4.innerHTML = textWaan;
+
+// }
+// const removActivSec4 = () => {
+
+//     showSec4.classList.remove('go_animation_text');
+
+// }
+// const exitSow = () => {
+//     containerSection4.classList.remove('go_animation_bacg');
+//     showSec4.classList.remove('go_animation_text');
+//     arrowSection4.classList.remove('disabled');
+// }
+// const activSlaidSec4 = () => {
+//     goActivSec4()
+//     setTimeout(removActivSec4, 8000);
+//     setTimeout(goActivSec4Twoo, 8000);
+//     setTimeout(removActivSec4, 16000);
+//     setTimeout(goActivSec4Three, 16000);
+//     setTimeout(removActivSec4, 24000);
+//     setTimeout(goActivSec4Faif, 24000);
+//     setTimeout(exitSow, 28000);
+// }
+// window.addEventListener('scroll', function () {
+//     onScroll += 1;
+//     console.log(onScroll)
+// });
+let scrollPos = 0;
+let activBootom = 210;
+const titleParalax6 = document.querySelector('.title_paralax6');
+let stopParalax = false;
 window.addEventListener('scroll', function () {
-    var x = window.scrollX;
-    var y = window.scrollY;
-    console.log(window.scrollY)
-    if (y >= 1695) {
-        $('body').addClass('stop-scrolling');
-        $('.block_hiden').addClass('scrol_up');
+    let x = window.scrollX;
+    let y = window.scrollY;
+    if (y < scrollPos) {
+        console.log("верх")
+        // if (y <= 3026) {
+        //     activBootom += 4;
+        //     titleParalax6.style.bottom = activBootom + "px";
+        //     console.log(activBootom)
+        // }
     }
-    if (y <= 1695) {
-        $('body').removeClass('stop-scrolling');
-        $('.block_hiden').removeClass('scrol_up')
-    }
+    if (y > scrollPos) {
+        console.log("вниз");
+
+        if (y >= 5040) {
+            activBootom -= 4;
+            titleParalax6.style.bottom = activBootom + "px";
+            console.log(activBootom)
+
+        }
+        if (activBootom <= 0) {
+            titleParalax6.style.bottom = 0 + "px";
+        }
+
+
+    };
+    scrollPos = y;
+    console.log(scrollPos)
+
 });
+const addHover = (btn) => {
+    btn.children[1].classList.add('activ_hover');
 
+    setTimeout(function () {
+        btn.children[1].classList.remove('activ_hover');
 
-
-
-const showSec4 = document.querySelector('.show_sec4');
-const arrowSection4 = document.querySelector('.aroow_section4');
-const containerSection4 = document.querySelector('.container_section4');
-
-const goActivSec4 = () => {
-    let textWaan = "Did you know that YOU have the power to end this downward spiral?";
-    containerSection4.classList.add('go_animation_bacg');
-
-    showSec4.classList.add('go_animation_text');
-    showSec4.innerHTML = textWaan;
-
+    }, 2500);
 }
 
-const goActivSec4Twoo = () => {
-    let textWaan = "There is no time to waste.";
 
-    showSec4.classList.add('go_animation_text');
-    showSec4.innerHTML = textWaan;
 
-}
-const goActivSec4Three = () => {
-    let textWaan = "By supporting Farnico as a customer, follower, donor or volunteer, you become part of our GLOBAL REVOLUTION";
-
-    showSec4.classList.add('go_animation_text');
-    showSec4.innerHTML = textWaan;
-
-}
-const goActivSec4Faif = () => {
-    let textWaan = "Support our MISSION";
-
-    showSec4.classList.add('go_animation_text');
-    showSec4.innerHTML = textWaan;
-
-}
-const removActivSec4 = () => {
-
-    showSec4.classList.remove('go_animation_text');
-
-}
-const exitSow = () => {
-    containerSection4.classList.remove('go_animation_bacg');
-    showSec4.classList.remove('go_animation_text');
-    arrowSection4.classList.remove('disabled');
-}
-const activSlaidSec4 = () => {
-    goActivSec4()
-    setTimeout(removActivSec4, 8000);
-    setTimeout(goActivSec4Twoo, 8000);
-    setTimeout(removActivSec4, 16000);
-    setTimeout(goActivSec4Three, 16000);
-    setTimeout(removActivSec4, 24000);
-    setTimeout(goActivSec4Faif, 24000);
-    setTimeout(exitSow, 28000);
-}
