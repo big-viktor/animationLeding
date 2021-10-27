@@ -2,57 +2,14 @@ $(document).ready(function () {
     $('.slider-for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        asNavFor: '.slider-nav',
-        arrows: false,
-        infinite: true,
-
-    });
-    $('.slider-nav').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        draggable: true,
-        asNavFor: '.slider-for',
         arrows: true,
         infinite: true,
-        focusOnSelect: true,
-        draggable: true,
 
-    });
-    $('.slider-for-two').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '.slider-nav-two',
-        arrows: false,
-        fade: true,
-        draggable: true,
-        infinite: true,
-
-    });
-    $('.slider-nav-two').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        asNavFor: '.slider-for-two',
-        arrows: false,
-        vertical: true,
-        verticalSwiping: true,
-        focusOnSelect: true,
-        draggable: true,
-        infinite: true,
-        responsive: [
-            {
-                breakpoint: 508,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1
-                }
-            }
-        ]
     });
     $('.responsive').slick({
-        dots: false,
-        infinite: false,
+        dots: true,
         speed: 300,
-        slidesToShow: 6,
+        slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
 
